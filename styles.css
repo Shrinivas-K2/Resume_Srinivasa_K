@@ -30,6 +30,12 @@ body {
   overflow-x: hidden;
 }
 
+body.custom-cursor,
+body.custom-cursor a,
+body.custom-cursor button {
+  cursor: none;
+}
+
 .grain {
   position: fixed;
   inset: 0;
@@ -37,6 +43,45 @@ body {
   background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 3px 3px;
   opacity: 0.4;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.25s ease, transform 0.18s ease;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f7a63b;
+  box-shadow: 0 0 12px rgba(247, 166, 59, 0.7);
+}
+
+.cursor-ring {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(42, 209, 163, 0.8);
+  box-shadow: 0 0 18px rgba(42, 209, 163, 0.24);
+}
+
+body.custom-cursor .cursor-dot,
+body.custom-cursor .cursor-ring {
+  opacity: 1;
+}
+
+body.cursor-hover .cursor-ring {
+  transform: translate(-50%, -50%) scale(1.55);
+  border-color: rgba(247, 166, 59, 0.95);
+  box-shadow: 0 0 22px rgba(247, 166, 59, 0.32);
 }
 
 .hero,
