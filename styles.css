@@ -517,6 +517,8 @@ h3 {
     background: rgba(7, 19, 26, 0.75);
     backdrop-filter: blur(12px);
     padding: 0.6rem 0;
+    justify-content: center;
+    align-items: center;
   }
 
   .nav-links {
@@ -526,6 +528,8 @@ h3 {
   .brand {
     font-size: 0.95rem;
     letter-spacing: 0.06em;
+    width: 100%;
+    text-align: center;
   }
 
   .hero-grid {
